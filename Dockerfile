@@ -2,8 +2,8 @@
 FROM node:18-bookworm
 
 # Install MariaDB and dos2unix
-RUN apt-get update && \
-    apt-get install -y mariadb-server dos2unix && \
+RUN apt-get update --fix-missing && \
+    apt-get install -y --no-install-recommends mariadb-server dos2unix && \
     rm -rf /var/lib/apt/lists/*
 
 # Fix MariaDB socket directory permissions
