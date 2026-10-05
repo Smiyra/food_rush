@@ -1,0 +1,7 @@
+node_modules/
+.env
+.DS_Store
+create_hf_space.py
+howitworks.md
+*.log
+.gitignore~

@@ -1,0 +1,18 @@
+# render.yaml — Render Blueprint (Infrastructure as Code)
+# Commit this file to your repo root, then on Render:
+#   New > Blueprint > connect your repo
+# Render will auto-detect this file and configure your service.
+
+services:
+  - type: web
+    name: food-rush
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    region: oregon  # change to your preferred region
+    plan: free      # or starter, standard, etc.
+    healthCheckPath: /healthz
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true   # Render auto-generates a secure random string
+      - key: NODE_ENV
+        value: production
