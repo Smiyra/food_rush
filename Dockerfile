@@ -1,5 +1,5 @@
-# Use Debian-based Node.js image (needed for apt-get to install MariaDB)
-FROM node:18-bullseye
+# Use Debian Bookworm-based Node.js image (needed for apt-get to install MariaDB)
+FROM node:18-bookworm
 
 # Install MariaDB and dos2unix
 RUN apt-get update && \
